@@ -1,0 +1,11 @@
+{
+  "libs": [
+    "ecma6"
+  ],
+  "loadEagerly": [],
+  "plugins": {
+    "complete_strings": {},
+    "node_resolve": {},
+    "node": {}
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "labyrinth",
+  "version": "0.0.1",
+  "description": "The labyrinth generator",
+  "main": "lib/index.js",
+  "private": true,
+  "bin": {
+    "kafka-topics": "./bin/kafka-topics.js"
+  },
+  "directories": {
+    "bin": "bin",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/test.*.js"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royaltm/js-labyrinth.git"
+  },
+  "keywords": [
+    "labyrinth"
+  ],
+  "author": "Rafał Michalski <royal@yeondir.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/royaltm/js-labyrinth/issues"
+  },
+  "homepage": "https://github.com/royaltm/js-labyrinth#readme",
+  "devDependencies": {
+    "tap": "^5.7.1"
+  }
+}
