@@ -18,7 +18,7 @@ function benchmark(cols, rows) {
     wall.closeAll().carve()
     return wall.toString()
   })
-  console.log(`Elapsed time: ${ms} ns/iter`)
+  console.log(`Elapsed time: ${ms} ms/iter`)
 }
 
 benchmark(10, 10)
