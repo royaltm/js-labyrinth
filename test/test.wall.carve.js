@@ -20,6 +20,10 @@ test('should_carve_a_labyrinth', (t) => {
   t.equal(0, count_open(labyrinth));
   labyrinth.carve();
   t.equal(137*111*2-2, count_open(labyrinth));
+  labyrinth.closeAll();
+  t.equal(0, count_open(labyrinth));
+  labyrinth.carve();
+  t.equal(137*111*2-2, count_open(labyrinth));
 
   t.end();
 });

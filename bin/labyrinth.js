@@ -11,6 +11,9 @@ var concurrency = args.length > 0 ? parseInt(args.shift()) : require('os').cpus(
 
 if (isFinite(cols) && isFinite(rows) && isFinite(deep) && isFinite(concurrency)) {
   if (rows > 0 && cols > 0) {
+
+    if (concurrency > deep) concurrency = deep;
+
     if (concurrency <= 1) {
       /* Linear implementation */
       while(deep-- > 0) {
@@ -32,8 +35,6 @@ if (isFinite(cols) && isFinite(rows) && isFinite(deep) && isFinite(concurrency))
 
 function parallel(cols, rows, deep, concurrency) {
   const cluster = require('cluster');
-
-  if (concurrency > deep) concurrency = deep;
 
   if (cluster.isMaster) {
     for (var i = concurrency; i-- > 0;) cluster.fork().send(deep--);

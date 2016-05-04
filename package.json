@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/royaltm/js-labyrinth#readme",
   "devDependencies": {
+    "ben": "0.0.0",
     "tap": "^5.7.1"
   }
 }
