@@ -13,7 +13,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap test/test.*.js"
+    "labyrinth": "node bin/labyrinth.js",
+    "test": "tap test/test.*.js",
+    "bench": "node bench/bench.labyrinth.js"
   },
   "engines": {
     "node": ">=6"
@@ -24,6 +26,9 @@
     "README.md",
     "LICENSE"
   ],
+  "bin": {
+    "labyrinth": "./bin/labyrinth.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/royaltm/js-labyrinth.git"
