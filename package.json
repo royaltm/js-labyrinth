@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "The labyrinth generator",
   "main": "lib/index.js",
+  "module": "src/index.js",
   "private": true,
   "bin": {
-    "kafka-topics": "./bin/kafka-topics.js"
+    "labyrinth": "./bin/labyrinth.js"
   },
   "directories": {
     "bin": "bin",
@@ -18,11 +19,12 @@
     "bench": "node bench/bench.labyrinth.js"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "files": [
     "bin",
     "lib",
+    "src",
     "README.md",
     "LICENSE"
   ],
@@ -44,6 +46,12 @@
   "homepage": "https://github.com/royaltm/js-labyrinth#readme",
   "devDependencies": {
     "ben": "0.0.0",
-    "tap": "^5.7.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-rollup": "^1.0.1",
+    "load-grunt-tasks": "^3.5.2",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "tap": "^10.1.0"
   }
 }

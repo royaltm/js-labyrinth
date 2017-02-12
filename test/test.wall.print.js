@@ -1,6 +1,6 @@
 const test = require('tap').test;
 const Wall = require("../lib").Wall;
-const Direction =  require("../lib/direction").Direction;
+const Direction =  require("../lib").Direction;
 
 const Up = Direction.Up;
 const Down = Direction.Down;

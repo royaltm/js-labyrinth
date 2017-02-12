@@ -1,5 +1,5 @@
 const test = require('tap').test;
-const Vec2D = require("../lib/vector2d").Vec2D;
+const Vec2D = require("../lib").Vec2D;
 
 test('should_create_empty_vector', (t) => {
   var v2d = new Vec2D(0, 0, 0);

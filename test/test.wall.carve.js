@@ -1,6 +1,6 @@
 const test = require('tap').test;
 const Wall = require("../lib").Wall;
-const { Up, Down, Left, Right } = require("../lib/direction").Direction;
+const { Up, Down, Left, Right } = require("../lib").Direction;
 
 function count_open(labyrinth) {
   var opened = 0;
