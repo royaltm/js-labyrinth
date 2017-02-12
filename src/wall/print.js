@@ -1,4 +1,3 @@
-import { Room } from "../room";
 import { Direction } from "../direction";
 
 const { Up, Down, Left, Right } = Direction;
