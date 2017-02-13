@@ -2,19 +2,21 @@ import { Room } from "../room";
 
 import { Move, Direction } from "../direction";
 
-const { Up, Down, Left, Right } = Direction;
-
 const random = Math.random;
 
 /** Carve a fresh labyrinth using hunt and seek algorithm.
  *
  *  The labyrinth must be in an initial state otherwise this method will never return.
+ *
+ *  If the `rng` argument is provided, it should return a random integer number between `0` and `n` excluding `n`.
+ *
+ *  @param {function({number}) -> {number}} [rng]
 **/
-export default function carve() {
+export default function carve(rng) {
+  if (rng == null) rng = (x) => (random() * x)|0;
   const rooms = new Room(this.rows, this.cols);
-  const rnd = (x) => (random() * x)|0;
-  var mov = Move.fromDir(Up);
-  var [x, y] = this.randomStart(rnd);
+  var mov = Move.fromDir( Direction.Up );
+  var [x, y] = this.randomStart(rng);
   const outbound_or_marked = (x, y, mov) => {
     var xx = x + mov.dx, yy = y + mov.dy;
     return !this.inBounds(xx, yy) || rooms.wasMarked(xx, yy);
@@ -24,7 +26,7 @@ export default function carve() {
 
   /* hunt */
   for(let n = this.rows * this.cols; n-- > 1;) {
-    switch(rnd(3)) {
+    switch(rng(3)) {
       case 1: mov.turnRt(); break;
       case 2: mov.turnLt(); break;
     }
@@ -38,7 +40,7 @@ export default function carve() {
         x += 1;
         y += 1;
         if (!this.inBounds(x, y)) {
-          [x, y] = this.randomStart(rnd);
+          [x, y] = this.randomStart(rng);
         }
       } while (!rooms.wasMarked(x, y))
     }

@@ -149,13 +149,13 @@ export class Wall {
   }
   /** Randomize coordinates.
    *
-   * The `rnd({number}) -> {number}` should return a random number between `0` and `n` excluding `n`.
+   *  The `rng({number}) -> {number}` should return a random integer number between `0` and `n` excluding `n`.
    *
-   *  @param {function({number}) -> {number}} rnd
+   *  @param {function({number}) -> {number}} rng
    *  @return {Array{number}} [x, y]
   **/
-  randomStart(rnd) {
-    return [rnd(this.cols), rnd(this.rows)];
+  randomStart(rng) {
+    return [rng(this.cols), rng(this.rows)];
   }
 
   static setPrototype(object) {
