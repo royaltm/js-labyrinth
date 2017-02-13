@@ -16,7 +16,9 @@
   "scripts": {
     "labyrinth": "node bin/labyrinth.js",
     "test": "tap test/test.*.js",
-    "bench": "node bench/bench.labyrinth.js"
+    "bench": "node bench/bench.labyrinth.js",
+    "rollup": "rollup -c",
+    "dev": "rollup -c --watch"
   },
   "engines": {
     "node": ">=4"
@@ -28,9 +30,6 @@
     "README.md",
     "LICENSE"
   ],
-  "bin": {
-    "labyrinth": "./bin/labyrinth.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/royaltm/js-labyrinth.git"
@@ -46,12 +45,9 @@
   "homepage": "https://github.com/royaltm/js-labyrinth#readme",
   "devDependencies": {
     "ben": "0.0.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-rollup": "^1.0.1",
-    "load-grunt-tasks": "^3.5.2",
     "rollup": "^0.41.4",
     "rollup-plugin-buble": "^0.15.0",
+    "rollup-watch": "^3.2.2",
     "tap": "^10.1.0"
   }
 }
